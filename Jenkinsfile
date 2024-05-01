@@ -14,13 +14,13 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                sh 'cp target/honda.war /home/vboxuser/Documents/DevOps_Software/apache-tomcat-9.0.88/webapps'
+                sh 'cp target/Safari.war /home/vboxuser/Documents/DevOps_Software/apache-tomcat-9.0.88/webapps'
             }
         }
         
         stage('slack') {
             steps {
-                slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'honda', color: 'good', message: 'Welcome to honda in grras with Swapnil Mahajan', notifyCommitters: true, teamDomain: 'DevOps-Grras-Projacts', tokenCredentialId: '91dc5d5d-7361-4216-b88f-d1b1043329c2'
+                slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'notify', color: 'good', message: 'WelCome To Jenkins', notifyCommitters: true, teamDomain: 'MyDevOpsTeam'
             }
         }
     }
